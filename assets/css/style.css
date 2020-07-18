@@ -1,0 +1,166 @@
+body, html {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+textarea {
+  resize: none;
+}
+
+p {
+  font-weight: 400;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.title-block {
+  font-size: 20px;
+}
+
+.header .navbar {
+  box-shadow: none;
+}
+.header .navbar-brand {
+  font-size: 25px;
+  font-weight: 700;
+}
+.header .nav-link {
+  font-size: 20px;
+}
+.header .bg {
+  padding: 150px 0 30px;
+  background: transparent url("../img/header-bg.png") no-repeat center;
+  background-size: cover;
+}
+.header-label {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.services {
+  padding: 120px 0;
+  background-color: #d7faf4;
+}
+.services .card {
+  box-shadow: none;
+  transition: 0.1s linear;
+}
+.services .card:hover {
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.65);
+  background-color: #00897b;
+}
+.services .card:hover .card-title, .services .card:hover .card-text, .services .card:hover .btn-outline-dark {
+  color: white !important;
+}
+.services .card:hover .btn-outline-dark {
+  border: 2px solid white !important;
+}
+.services .card:hover .services-icon {
+  fill: white;
+}
+.services-icon {
+  height: 60px;
+}
+.services .card-text {
+  line-height: 25px;
+}
+.services .btn {
+  box-shadow: none;
+}
+
+.pricing-plan {
+  padding: 50px 0;
+  background-color: #f0f1f1;
+}
+.pricing-plan .card {
+  box-shadow: none;
+  transition: 0.1s linear;
+}
+.pricing-plan .card:hover {
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.65);
+}
+.pricing-plan .card-decor-block {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 150px;
+  background-color: #0b51c5;
+}
+.pricing-plan .card-decor-triangle {
+  top: 150px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-color: #0b51c5 transparent #0b51c5 transparent;
+  border-style: solid;
+  border-width: 25px 400px 0px 0px;
+}
+.pricing-plan .card-body {
+  position: relative;
+  z-index: 1;
+}
+.pricing-plan .card-price {
+  font-size: 50px;
+}
+.pricing-plan .card-price sub {
+  font-size: 20px;
+}
+.pricing-plan .card-ability::after {
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #c9c7c7;
+}
+
+.team .card-social-container {
+  padding: 5px 10px;
+  background-color: #d9dcdc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.team .card-social-container i {
+  color: #00897b;
+}
+.team .card-social-container:hover {
+  background-color: #0b51c5;
+}
+.team .card-social-container:hover i {
+  color: white;
+}
+.team .carousel-indicators {
+  bottom: -50px;
+}
+.team .carousel-indicators li {
+  background-color: #00897b;
+  width: 16px;
+  height: 16px;
+}
+.team .carousel-indicators li.active {
+  background-color: #3949ab;
+}
+
+.blog {
+  background-color: #e4fdf9;
+}
+
+.contact-us-icon-container {
+  background-color: #3949ab;
+}
+.contact-us-text {
+  font-size: 20px;
+}
+.contact-us .container-form {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */

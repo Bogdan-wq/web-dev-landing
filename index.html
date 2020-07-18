@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="assets/bootstrap/mdb.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Web development project</title>
+</head>
+<body>
+    <svg display="none">
+        <symbol id="smartphone" viewBox="0 0 512 512">
+            <g><path d="m312.846 497h-181.146c-3.597 0-6.523-2.928-6.523-6.526v-30.772c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v30.772c0 11.87 9.655 21.526 21.523 21.526h181.146c4.143 0 7.5-3.358 7.5-7.5s-3.357-7.5-7.5-7.5z"/><path d="m394.611 452.202c-4.143 0-7.5 3.358-7.5 7.5v30.772c0 3.598-2.926 6.526-6.522 6.526h-32.457c-4.143 0-7.5 3.358-7.5 7.5s3.357 7.5 7.5 7.5h32.457c11.867 0 21.522-9.656 21.522-21.526v-30.772c0-4.142-3.358-7.5-7.5-7.5z"/><path d="m333.628 37.483v-22.483h46.961c3.597 0 6.522 2.928 6.522 6.526v30.772c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-30.772c0-11.87-9.655-21.526-21.523-21.526h-133.922c-4.143 0-7.5 3.358-7.5 7.5s3.357 7.5 7.5 7.5h71.962v14.983h-124.967v-14.983h18.475c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5h-80.436c-11.868 0-21.523 9.656-21.523 21.526v30.772c0 4.142 3.358 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-30.772c0-3.599 2.926-6.526 6.523-6.526h46.96v22.483c0 4.142 3.358 7.5 7.5 7.5h139.967c4.143 0 7.501-3.358 7.501-7.5z"/><path d="m206.09 464.491c0 4.142 3.358 7.5 7.5 7.5h85.107c4.143 0 7.5-3.358 7.5-7.5s-3.357-7.5-7.5-7.5h-85.107c-4.142 0-7.5 3.358-7.5 7.5z"/><path d="m160.069 452.663c12.385 0 22.46-10.1 22.46-22.515s-10.076-22.516-22.46-22.516c-9.763 0-18.091 6.277-21.18 15.016h-108.834c-1.767 0-3.476.624-4.828 1.761l-22.045 18.543c-3.17 2.666-3.578 7.397-.912 10.567 1.483 1.764 3.605 2.672 5.743 2.672 1.704 0 3.418-.578 4.824-1.761l19.952-16.783h106.1c3.089 8.739 11.417 15.016 21.18 15.016zm0-30.031c4.114 0 7.46 3.372 7.46 7.516s-3.347 7.515-7.46 7.515-7.461-3.371-7.461-7.515 3.347-7.516 7.461-7.516z"/><path d="m2.672 69.048 22.044 18.543c1.352 1.137 3.062 1.761 4.828 1.761h108.835c3.089 8.739 11.416 15.016 21.179 15.016 12.385 0 22.46-10.101 22.46-22.516s-10.076-22.516-22.46-22.516c-9.763 0-18.091 6.277-21.179 15.016h-106.1l-19.951-16.782c-3.171-2.667-7.901-2.258-10.567.911-2.667 3.17-2.258 7.901.911 10.567zm156.887 5.289c4.114 0 7.46 3.372 7.46 7.516s-3.347 7.516-7.46 7.516-7.46-3.372-7.46-7.516 3.346-7.516 7.46-7.516z"/><path d="m159.559 233.461c-9.763 0-18.091 6.277-21.179 15.016h-130.37c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5h130.37c3.089 8.739 11.416 15.016 21.179 15.016 12.385 0 22.46-10.101 22.46-22.516s-10.076-22.516-22.46-22.516zm0 30.031c-4.114 0-7.46-3.372-7.46-7.516s3.347-7.516 7.46-7.516 7.46 3.372 7.46 7.516c0 4.145-3.347 7.516-7.46 7.516z"/><path d="m22.461 191.441c9.763 0 18.091-6.276 21.179-15.015h66.537v49.52c0 4.142 3.358 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-114.558c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v50.038h-66.537c-3.089-8.739-11.416-15.016-21.179-15.016-12.385.001-22.461 10.101-22.461 22.516s10.076 22.515 22.461 22.515zm0-30.03c4.114 0 7.46 3.372 7.46 7.516s-3.347 7.515-7.46 7.515-7.461-3.372-7.461-7.516 3.347-7.515 7.461-7.515z"/><path d="m22.461 365.542c9.763 0 18.091-6.277 21.179-15.016h66.537v49.589c0 4.142 3.358 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-113.865c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v49.276h-66.537c-3.089-8.739-11.416-15.016-21.179-15.016-12.385.001-22.461 10.102-22.461 22.517s10.076 22.515 22.461 22.515zm0-30.031c4.114 0 7.46 3.372 7.46 7.516s-3.347 7.516-7.46 7.516-7.461-3.372-7.461-7.516 3.347-7.516 7.461-7.516z"/><path d="m508.818 442.952-22.044-18.543c-1.352-1.137-3.062-1.761-4.828-1.761h-108.835c-3.089-8.739-11.417-15.016-21.18-15.016-12.385 0-22.461 10.101-22.461 22.516s10.076 22.515 22.461 22.515c9.763 0 18.091-6.276 21.18-15.015h106.1l19.951 16.783c1.406 1.183 3.12 1.761 4.824 1.761 2.138 0 4.26-.909 5.743-2.672 2.667-3.171 2.259-7.902-.911-10.568zm-156.887-5.289c-4.114 0-7.461-3.371-7.461-7.515s3.347-7.516 7.461-7.516 7.461 3.372 7.461 7.516-3.347 7.515-7.461 7.515z"/><path d="m352.441 59.337c-12.385 0-22.46 10.101-22.46 22.516s10.075 22.516 22.46 22.516c9.763 0 18.091-6.277 21.18-15.016h108.835c1.767 0 3.477-.624 4.828-1.761l22.044-18.543c3.17-2.667 3.578-7.397.911-10.567-2.666-3.169-7.397-3.578-10.567-.911l-19.952 16.782h-106.1c-3.088-8.739-11.416-15.016-21.179-15.016zm0 30.031c-4.113 0-7.46-3.372-7.46-7.516s3.347-7.516 7.46-7.516c4.114 0 7.461 3.372 7.461 7.516s-3.347 7.516-7.461 7.516z"/><path d="m329.981 255.977c0 12.415 10.075 22.516 22.46 22.516 9.763 0 18.091-6.277 21.18-15.016h130.369c4.143 0 7.5-3.358 7.5-7.5s-3.357-7.5-7.5-7.5h-130.369c-3.089-8.739-11.417-15.016-21.18-15.016-12.385 0-22.46 10.101-22.46 22.516zm29.921 0c0 4.144-3.347 7.516-7.461 7.516-4.113 0-7.46-3.372-7.46-7.516s3.347-7.516 7.46-7.516c4.114 0 7.461 3.372 7.461 7.516z"/><path d="m489.54 146.411c-9.763 0-18.091 6.277-21.18 15.016h-66.249v-50.038c0-4.142-3.357-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v114.558c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-49.52h66.249c3.089 8.739 11.417 15.015 21.18 15.015 12.385 0 22.46-10.1 22.46-22.515s-10.076-22.516-22.46-22.516zm0 30.03c-4.114 0-7.461-3.371-7.461-7.515s3.347-7.516 7.461-7.516c4.113 0 7.46 3.372 7.46 7.516s-3.347 7.515-7.46 7.515z"/><path d="m489.54 320.511c-9.763 0-18.091 6.277-21.18 15.016h-66.249v-49.277c0-4.142-3.357-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v113.866c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-49.589h66.249c3.089 8.739 11.417 15.016 21.18 15.016 12.385 0 22.46-10.101 22.46-22.516s-10.076-22.516-22.46-22.516zm0 30.031c-4.114 0-7.461-3.372-7.461-7.516s3.347-7.516 7.461-7.516c4.113 0 7.46 3.372 7.46 7.516s-3.347 7.516-7.46 7.516z"/><path d="m256.144 197.133h-44.009c-4.142 0-7.5 3.358-7.5 7.5v102.687c0 4.142 3.358 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-43.844h29.009v43.844c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-102.687c0-4.142-3.357-7.5-7.5-7.5zm-36.509 51.344v-36.344h29.009v36.344z"/><path d="m307.653 307.32v-102.687c0-4.142-3.357-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v102.687c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5z"/></g>
+        </symbol>
+    </svg>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">Your Brand</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNav"
+                        aria-controls="headerNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="headerNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link" href="#">Servicing</a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link" href="#">Contact us</a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link" href="#"><i class="fa fa-search"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container-fluid bg">
+            <div class="d-flex flex-column align-items-center text-white">
+                <h1 class="display-4 text-center">Web development project</h1>
+                <span class="mt-3 header-label">Very suitable to support all web development projects</span>
+                <div class="mt-5 d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-white text-white">Our services</button>
+                    <button type="button" class="btn btn-default text-white ">Hire is now</button>
+                </div>
+                <a href="#" class="text-white mt-5">
+                    <i class="fa fa-angle-down fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="about py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="font-weight-bold title">About us</h1>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                </div>
+            </div>
+            <div class="row mt-5 row-cols-md-3 row-cols-1">
+                <div class="col">
+                    <div class="card z-depth-0">
+                        <div class="card-img-top d-flex justify-content-center align-items-center">
+                            <img class="" src="assets/img/services/1.png" />
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Awesome Icons</h3>
+                            <p class="text-center">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card z-depth-0">
+                        <div class="card-img-top d-flex justify-content-center align-items-center">
+                            <img class="" src="assets/img/services/2.png" />
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-center">One page</h3>
+                            <p class="text-center">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card z-depth-0">
+                        <div class="card-img-top d-flex justify-content-center align-items-center">
+                            <img class="" src="assets/img/services/3.png" />
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Fully responsive</h3>
+                            <p class="text-center">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="font-weight-bold title">Our Services</h1>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                </div>
+            </div>
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 mt-5">
+                <div class="col">
+                    <div class="card pt-5">
+                        <svg class="services-icon">
+                            <use xlink:href="#smartphone"></use>
+                        </svg>
+                        <div class="card-body">
+                            <h3 class="card-title title-block text-center">Research</h3>
+                            <p class="card-text text-center mt-4">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
+                            </p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="btn btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-sm-4 mt-md-0">
+                    <div class="card pt-5">
+                        <svg class="services-icon">
+                            <use xlink:href="#smartphone"></use>
+                        </svg>
+                        <div class="card-body">
+                            <h3 class="card-title title-block text-center">Portfolio</h3>
+                            <p class="card-text text-center mt-4">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
+                            </p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="btn btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4 mt-lg-0">
+                    <div class="card pt-5">
+                        <svg class="services-icon">
+                            <use xlink:href="#smartphone"></use>
+                        </svg>
+                        <div class="card-body">
+                            <h3 class="card-title title-block text-center">Support</h3>
+                            <p class="card-text text-center mt-4">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
+                            </p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="btn btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="card pt-5">
+                        <svg class="services-icon">
+                            <use xlink:href="#smartphone"></use>
+                        </svg>
+                        <div class="card-body">
+                            <h3 class="card-title title-block text-center">Documentation</h3>
+                            <p class="card-text text-center mt-4">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
+                            </p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="btn btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="card pt-5">
+                        <svg class="services-icon">
+                            <use xlink:href="#smartphone"></use>
+                        </svg>
+                        <div class="card-body">
+                            <h3 class="card-title title-block text-center">Development</h3>
+                            <p class="card-text text-center mt-4">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
+                            </p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="btn btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <div class="card pt-5">
+                        <svg class="services-icon">
+                            <use xlink:href="#smartphone"></use>
+                        </svg>
+                        <div class="card-body">
+                            <h3 class="card-title title-block text-center">Design</h3>
+                            <p class="card-text text-center mt-4">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
+                            </p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="btn btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="portfolio py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="font-weight-bold title">Latest Works</h1>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                </div>
+            </div>
+            <ul class="nav mt-5 white justify-content-center">
+                <li class="nav-item">
+                    <a class="btn btn-outline-green" href="#">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-green" href="#">Web Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-green" href="#">Ui/Ux Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-green" href="#">Mockups</a>
+                </li>
+            </ul>
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 mt-5">
+                <div class="col d-sm-flex justify-content-sm-center d-flex justify-content-center">
+                    <div class="view overlay">
+                        <img src="assets/img/portfolio/1.png" class="img-fluid">
+                        <div class="mask d-flex justify-content-center align-items-center flex-column rgba-black-strong">
+                            <h3 class="white-text">Hand Watch</h3>
+                            <p class="white-text">UI/UX Design</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col mt-sm-4 mt-md-0 mt-4 d-sm-flex justify-content-sm-center d-flex justify-content-center">
+                    <div class="view overlay">
+                        <img src="assets/img/portfolio/1.png" class="img-fluid">
+                        <div class="mask d-flex justify-content-center align-items-center flex-column rgba-black-strong">
+                            <h3 class="white-text">Hand Watch</h3>
+                            <p class="white-text">UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4 mt-lg-0 d-sm-flex justify-content-sm-center d-flex justify-content-center">
+                    <div class="view overlay">
+                        <img src="assets/img/portfolio/2.png" class="img-fluid">
+                        <div class="mask d-flex justify-content-center align-items-center flex-column rgba-black-strong">
+                            <h3 class="white-text">Hand Watch</h3>
+                            <p class="white-text">UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4 d-sm-flex justify-content-sm-center d-flex justify-content-center">
+                    <div class="view overlay">
+                        <img src="assets/img/portfolio/3.png" class="img-fluid">
+                        <div class="mask d-flex justify-content-center align-items-center flex-column rgba-black-strong">
+                            <h3 class="white-text">Hand Watch</h3>
+                            <p class="white-text">UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4 d-sm-flex justify-content-sm-center">
+                    <div class="view overlay">
+                        <img src="assets/img/portfolio/4.png" class="img-fluid">
+                        <div class="mask d-flex justify-content-center align-items-center flex-column rgba-black-strong">
+                            <h3 class="white-text">Hand Watch</h3>
+                            <p class="white-text">UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4 d-sm-flex justify-content-sm-center">
+                    <div class="view overlay">
+                        <img src="assets/img/portfolio/5.png" class="img-fluid">
+                        <div class="mask d-flex justify-content-center align-items-center flex-column rgba-black-strong">
+                            <h3 class="white-text">Hand Watch</h3>
+                            <p class="white-text">UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button type="button" class="btn btn-default">View All</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="pricing-plan">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="font-weight-bold title">Pricing Plans</h1>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                </div>
+            </div>
+            <div class="row row-cols-lg-3 row-cols-1 mt-5">
+                <div class="col col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+                    <div class="card align-items-center position-relative overflow-hidden">
+                        <div class="card-decor-block position-absolute"></div>
+                        <div class="card-decor-triangle position-absolute"></div>
+                        <div class="card-body">
+                            <h2 class="card-title text-center text-white">Free Trial</h2>
+                            <span class="card-price text-white"><sup>$</sup>00<sub>per month</sub></span>
+                            <div class="d-flex flex-column mt-5">
+                                <div class="card-ability text-center mt-4 position-relative pb-2">
+                                    30 Free Trial
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    5 Free Projects
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    PHP 5 Enabled
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    24/7 Suports
+                                </div>
+                            </div>
+                            <div class="text-center mt-5">
+                                <a href="#" class="btn btn-outline-dark">
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-8 offset-md-2 col-sm-8 offset-sm-2 mt-lg-0 mt-4">
+                    <div class="card align-items-center position-relative overflow-hidden">
+                        <div class="card-decor-block position-absolute"></div>
+                        <div class="card-decor-triangle position-absolute"></div>
+                        <div class="card-body position-relative">
+                            <h2 class="card-title text-center text-white">Basic</h2>
+                            <span class="card-price text-white"><sup>$</sup>50<sub>per month</sub></span>
+                            <div class="d-flex flex-column mt-5">
+                                <div class="card-ability text-center mt-4 position-relative pb-2">
+                                    30 Free Trial
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    5 Free Projects
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    PHP 5 Enabled
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    24/7 Suports
+                                </div>
+                            </div>
+                            <div class="text-center mt-5">
+                                <a href="#" class="btn btn-outline-dark">
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-8 offset-md-2 col-sm-8 offset-sm-2 mt-lg-0 mt-4">
+                    <div class="card align-items-center position-relative overflow-hidden">
+                        <div class="card-decor-block position-absolute"></div>
+                        <div class="card-decor-triangle position-absolute"></div>
+                        <div class="card-body">
+                            <h2 class="card-title text-center text-white">Ultimate</h2>
+                            <span class="card-price text-white"><sup>$</sup>99<sub>per month</sub></span>
+                            <div class="d-flex flex-column mt-5">
+                                <div class="card-ability text-center mt-4 position-relative pb-2">
+                                    30 Free Trial
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    5 Free Projects
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    PHP 5 Enabled
+                                </div>
+                                <div class="card-ability text-center mt-3 position-relative pb-2">
+                                    24/7 Suports
+                                </div>
+                            </div>
+                            <div class="text-center mt-5">
+                                <a href="#" class="btn btn-outline-dark">
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="team py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="font-weight-bold title">Our Team Member</h1>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                </div>
+            </div>
+            <div id="team-carousel" class="carousel slide mt-5" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#team-carousel" data-slide-to="0" class="active">
+                    <li data-target="#team-carousel" data-slide-to="1">
+                    <li data-target="#team-carousel" data-slide-to="2">
+                </ol>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row row-cols-md-3 row-cols-1">
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/1.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">John Doe</h3>
+                                        <span class="card-text">General Manager</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/2.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">Alexa Biru</h3>
+                                        <span class="card-text">Office Director</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/3.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">Ronobirg sing</h3>
+                                        <span class="card-text">Admin</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row row-cols-md-3 row-cols-1">
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/1.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">John Doe</h3>
+                                        <span class="card-text">General Manager</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/2.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">Alexa Biru</h3>
+                                        <span class="card-text">Office Director</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/3.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">Ronobirg sing</h3>
+                                        <span class="card-text">Admin</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row row-cols-md-3 row-cols-1">
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/1.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">John Doe</h3>
+                                        <span class="card-text">General Manager</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/2.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">Alexa Biru</h3>
+                                        <span class="card-text">Office Director</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card z-depth-0">
+                                    <img class="card-img-top" src="./assets/img/team/3.png">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">Ronobirg sing</h3>
+                                        <span class="card-text">Admin</span>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                            <div class="card-social-container mr-2">
+                                                <i class="fa fa-comments"></i>
+                                            </div>
+                                            <div class="card-social-container">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="blog py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="font-weight-bold title">Blog</h1>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                </div>
+            </div>
+            <div class="row row-cols-md-2 row-cols-1 mt-5">
+                <div class="col">
+                    <img class="img-fluid" src="assets/img/blog/1.png">
+                </div>
+                <div class="col">
+                    <div class="pt-5">
+                        <h3><a href="#" class="text-default">SEO Quis Vestibulum</a></h3>
+                        <div class="d-flex mt-4">
+                            <div>
+                                <i class="fa fa-calendar"></i>
+                                <span class="ml-2">14.07.2017</span>
+                            </div>
+                            <div class="ml-5">
+                                <i class="fa fa-file-o"></i>
+                                <span class="ml-2">Development</span>
+                            </div>
+                        </div>
+                        <p class="mt-3">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-md-2 row-cols-1 mt-5">
+                <div class="col order-md-1 order-0">
+                    <img class="img-fluid" src="assets/img/blog/2.png">
+                </div>
+                <div class="col">
+                    <div class="pt-5">
+                        <h3><a href="#" class="text-default">SEO Quis Vestibulum</a></h3>
+                        <div class="d-flex mt-4">
+                            <div>
+                                <i class="fa fa-calendar"></i>
+                                <span class="ml-2">14.07.2017</span>
+                            </div>
+                            <div class="ml-5">
+                                <i class="fa fa-file-o"></i>
+                                <span class="ml-2">Development</span>
+                            </div>
+                        </div>
+                        <p class="mt-3">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-md-2 row-cols-1 mt-5">
+                <div class="col">
+                    <img class="img-fluid" src="assets/img/blog/3.png">
+                </div>
+                <div class="col">
+                    <div class="pt-5">
+                        <h3><a href="#" class="text-default">SEO Quis Vestibulum</a></h3>
+                        <div class="d-flex mt-4">
+                            <div>
+                                <i class="fa fa-calendar"></i>
+                                <span class="ml-2">14.07.2017</span>
+                            </div>
+                            <div class="ml-5">
+                                <i class="fa fa-file-o"></i>
+                                <span class="ml-2">Development</span>
+                            </div>
+                        </div>
+                        <p class="mt-3">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button type="button" class="btn btn-default">More view</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contact-us bg-dark py-5 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2 text-center">
+                    <h1 class="font-weight-bold title">Contact us</h1>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                </div>
+            </div>
+            <div class="row row-cols-md-3 row-cols-1 mt-5">
+                <div class="col d-flex flex-column align-items-center">
+                    <div class="d-flex justify-content-center align-items-center rounded py-3 px-4 rounded-circle contact-us-icon-container">
+                        <i class="fa fa-map-marker fa-4x"></i>
+                    </div>
+                    <p class="mt-4 text-center contact-us-text">Nobinagar savar,Dhaka Bangladesh</p>
+                </div>
+                <div class="col d-flex flex-column align-items-center mt-md-0 mt-3">
+                    <div class="d-flex justify-content-center align-items-center rounded py-3 px-4 rounded-circle contact-us-icon-container">
+                        <i class="fa fa-phone fa-4x"></i>
+                    </div>
+                    <span class="mt-4 contact-us-text">+8801743331996</span>
+                    <span class="contact-us-text">+8801928737807</span>
+                </div>
+                <div class="col d-flex flex-column align-items-center mt-md-0 mt-3">
+                    <div class="d-flex justify-content-center align-items-center rounded py-3 px-4 rounded-circle contact-us-icon-container">
+                        <i class="fa fa-envelope fa-4x"></i>
+                    </div>
+                    <span class="mt-4 contact-us-text">quickmasud@gmail.com</span>
+                    <span class="contact-us-text">quickmasud@yahoo.com</span>
+                </div>
+            </div>
+
+            <div class="container-form mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Your NAME" class="form-control form-control-lg">
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-4">
+                        <input type="email" placeholder="Your email" class="form-control form-control-lg">
+                    </div>
+                    <div class="col-12 mt-4">
+                        <div class="form-group">
+                            <textarea class="form-control rounded" placeholder="Write Message" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-white rounded-lg">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="page-footer white py-3">
+        <div class="footer-copyright text-dark text-center bg-white">
+            All rights Reserved © 2017
+        </div>
+    </footer>
+
+
+
+
+<script src="assets/bootstrap/jquery.js"></script>
+<script src="assets/bootstrap/bootstrap.js"></script>
+<script src="assets/bootstrap/jquery.js"></script>
+</body>
+</html>
